@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery - Profile</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <h1><a href="/">Image Gallery</a></h1>
+            <ul class="nav-links">
+                <!-- Navigation links will be populated by JavaScript -->
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="profile-section">
+            <div class="profile-header">
+                <img src="/assets/images/default-avatar.png" alt="Profile Picture" class="profile-avatar" id="profilePicture">
+                <div class="profile-info">
+                    <h2>My Profile</h2>
+                    <form id="profileForm">
+                        <div class="form-group">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" id="username" name="username" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bio" class="form-label">Bio</label>
+                            <textarea id="bio" name="bio" class="form-input"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Update Profile</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="upload-section">
+            <h3>Upload New Image</h3>
+            <form id="uploadForm">
+                <div class="form-group">
+                    <label for="image" class="form-label">Select Image</label>
+                    <input type="file" id="image" name="image" class="form-input" accept="image/*" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" id="title" name="title" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea id="description" name="description" class="form-input" placeholder="Describe your image..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="tags" class="form-label">Tags (comma-separated)</label>
+                    <input type="text" id="tags" name="tags" class="form-input" placeholder="nature, landscape, etc">
+                </div>
+
+                <div class="form-group visibility-group">
+                    <label class="visibility-label">
+                        <input type="checkbox" id="isPublic" name="isPublic">
+                        <span class="visibility-text">Share in Public Gallery</span>
+                        <small class="visibility-help">Check this to make your image visible to everyone in the Public Gallery</small>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Upload Image</button>
+            </form>
+        </div>
+
+        <div class="gallery-section">
+            <h3>My Images</h3>
+            <div id="userGallery" class="image-grid">
+                <!-- Images will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/auth.js"></script>
+    <script src="/assets/js/upload.js"></script>
+</body>
+</html>
